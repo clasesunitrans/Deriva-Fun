@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriva-Fun 🧠✨</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    
+    <!-- KaTeX JavaScript -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" 
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ]
+            });"></script>
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Deriva-Fun 🧠✨</h1>
+            <p class="subtitle">Aprende derivadas de forma divertida e interactiva</p>
+            <nav>
+                <button id="btn-teoria" class="nav-btn active">Teoría 📚</button>
+                <button id="btn-practica" class="nav-btn">Práctica ✍️</button>
+                <button id="btn-reto" class="nav-btn">Reto 🏆</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Teoría -->
+        <section id="teoria" class="seccion active">
+            <div class="seccion-header">
+                <h2>Teoría 📚 - El Formulario Definitivo</h2>
+                <p>Domina todas las reglas de derivación con explicaciones claras y ejemplos.</p>
+            </div>
+            <div id="teoria-content" class="content-container">
+                <!-- El contenido se generará dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Sección de Práctica -->
+        <section id="practica" class="seccion">
+            <div class="seccion-header">
+                <h2>Práctica ✍️ - Modo Zen</h2>
+                <p>Practica derivadas con ejercicios personalizados y feedback instantáneo.</p>
+            </div>
+            <div id="practica-content" class="content-container">
+                <!-- El contenido se generará dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Sección de Reto -->
+        <section id="reto" class="seccion">
+            <div class="seccion-header">
+                <h2>Reto 🏆 - Derivador Legendario</h2>
+                <p>Pon a prueba tus habilidades con desafíos de diferentes niveles de dificultad.</p>
+            </div>
+            <div id="reto-content" class="content-container">
+                <!-- El contenido se generará dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deriva-Fun - Hecho con ❤️ para el aprendizaje de matemáticas</p>
+    </footer>
+
+    <!-- JavaScript principal -->
+    <script src="app.js"></script>
+</body>
+</html>
+
