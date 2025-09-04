@@ -1,0 +1,95 @@
+Estructura General (HTML, CSS, JS)
+Archivo index.html (con inclusión de KaTeX):
+code
+Html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriva-Fun 🧠✨</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Deriva-Fun 🧠✨</h1>
+        <nav>
+            <button id="btn-teoria">Teoría 📚</button>
+            <button id="btn-practica">Práctica ✍️</button>
+            <button id="btn-reto">Reto 🏆</button>
+        </nav>
+    </header>
+    <main>
+        <section id="teoria" class="seccion"></section>
+        <section id="practica" class="seccion" style="display: none;"></section>
+        <section id="reto" class="seccion" style="display: none;"></section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
+Archivo style.css (con Media Queries para Responsividad):
+code
+Css
+/* Estilos base para móviles */
+body { font-family: 'Arial', sans-serif; /* Usar fuentes amigables */ }
+.seccion { padding: 15px; }
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+
+/* Media Query para Tablets */
+@media (min-width: 768px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Media Query para Desktops */
+@media (min-width: 1024px) {
+    .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+Sección 1: Teoría 📚 "El Formulario Definitivo"
+Esta sección ahora será más completa. Se organizará en categorías con tarjetas desplegables para no abrumar al estudiante.
+Contenido (usando sintaxis de KaTeX para las fórmulas):
+Categoría: Reglas Básicas
+Función Constante: f(x) = c \implies f'(x) = 0 🤔
+Función Identidad: f(x) = x \implies f'(x) = 1 🙋‍♂️
+Regla de la Potencia: f(x) = x^n \implies f'(x) = nx^{n-1} 💪
+Categoría: Reglas de Álgebra de Derivadas
+Suma y Resta: (f \pm g)'(x) = f'(x) \pm g'(x) ➕➖
+Producto: (f \cdot g)'(x) = f'(x)g(x) + f(x)g'(x) 🤝
+Cociente: \left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^2} 🤯
+Categoría: ¡La Regla Maestra!
+Regla de la Cadena: (f \circ g)'(x) = f'(g(x)) \cdot g'(x) ⛓️‍💥
+Explicación amigable: "Deriva la función de 'afuera', dejando lo de 'adentro' igual, y luego multiplica por la derivada de lo de 'adentro'. ¡Es como pelar una cebolla, capa por capa!"
+Categoría: Funciones Exponenciales y Logarítmicas
+Exponencial Natural: f(x) = e^x \implies f'(x) = e^x 🤯
+Exponencial General: f(x) = a^x \implies f'(x) = a^x \ln(a) 📈
+Logaritmo Natural: f(x) = \ln(x) \implies f'(x) = \frac{1}{x} 🍃
+Logaritmo Base a: f(x) = \log_a(x) \implies f'(x) = \frac{1}{x \ln(a)} 🪵
+Categoría: Funciones Trigonométricas
+Seno: f(x) = \sin(x) \implies f'(x) = \cos(x) ☀️
+Coseno: f(x) = \cos(x) \implies f'(x) = -\sin(x) 🌙
+Tangente: f(x) = \tan(x) \implies f'(x) = \sec^2(x) 📐
+Categoría: Funciones Trigonométricas Inversas
+Arcoseno: f(x) = \arcsin(x) \implies f'(x) = \frac{1}{\sqrt{1-x^2}} ↩️☀️
+Arcocoseno: f(x) = \arccos(x) \implies f'(x) = -\frac{1}{\sqrt{1-x^2}} ↩️🌙
+Arcotangente: f(x) = \arctan(x) \implies f'(x) = \frac{1}{1+x^2} ↩️📐
+Sección 2: Práctica ✍️ "Modo Zen"
+Esta sección se beneficia enormemente de las nuevas reglas, permitiendo una mayor variedad de ejercicios.
+Funcionalidades mejoradas:
+Filtro de Práctica: Permite al estudiante elegir qué tipo de reglas quiere practicar. Por ejemplo, casillas de verificación para "Reglas Algebraicas", "Trigonométricas", "Regla de la Cadena", etc.
+Generador de Ejercicios Avanzado: El generador en app.js ahora debe ser capaz de combinar reglas.
+Ejemplo simple: f(x) = x^3 + \sin(x)
+Ejemplo con Regla de la Cadena: f(x) = \cos(5x^2)
+Ejemplo con Producto y Exponencial: f(x) = e^x \cdot \tan(x)
+Feedback Detallado: Si un estudiante falla en \cos(5x^2), el feedback podría ser: "¡Cuidado! Parece que hay una función 'dentro' de otra. ¡No olvides la Regla de la Cadena! ⛓️‍💥".
+Sección 3: Reto 🏆 "Derivador Legendario"
+El modo reto ahora puede tener niveles de dificultad mucho más marcados.
+Nuevos Niveles de Dificultad:
+Nivel 1 (Básico 😎): Reglas de potencia, suma, resta, constante, identidad.
+Nivel 2 (Intermedio 🤓): Se añaden reglas de producto, cociente, exponenciales y logarítmicas.
+Nivel 3 (Avanzado 🔥): Se añaden funciones trigonométricas y trigonométricas inversas.
+Nivel 4 (¡Infierno! 👹): Ejercicios que combinan múltiples reglas, especialmente la Regla de la Cadena de forma anidada (ej. \ln(\sin(e^x))).
+Tabla de Puntuaciones (Leaderboard):
+Para hacerlo más competitivo, puedes usar localStorage para guardar el "Top 5" de puntuaciones en el navegador del usuario, mostrando el nombre (que pueden introducir) y la puntuación.
+Con estas mejoras, "Deriva-Fun" se convierte en una herramienta de aprendizaje progresiva, visualmente atractiva, matemáticamente precisa y accesible desde cualquier dispositivo. ¡Será un recurso invaluable para tus estudiantes

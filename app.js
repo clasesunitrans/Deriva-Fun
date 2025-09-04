@@ -1021,7 +1021,7 @@ class DerivaFun {
     timeUp() {
         this.stopTimer();
         
-        const feedbackArea = document.getElementById('challenge-feedback-area');
+        const feedbackArea = document.getElementById("challenge-feedback-area");
         if (feedbackArea) {
             feedbackArea.innerHTML = `
                 <div class="feedback incorrect">
@@ -1032,9 +1032,8 @@ class DerivaFun {
             this.renderMath();
         }
 
-        setTimeout(() => {
-            this.generateChallengeExercise();
-        }, 2000);
+        // Si el tiempo se agota, finalizar el reto
+        this.endChallenge();
     }
 
     // Finalizar reto
@@ -1073,7 +1072,7 @@ class DerivaFun {
                                placeholder="Ingresa tu nombre..." 
                                maxlength="20"
                                onkeypress="if(event.key==='Enter') app.savePlayerScore()">
-                        <button class="btn btn-primary" onclick="app.savePlayerScore()">Guardar Puntuación</button>
+                        <button class="btn btn-primary" id="save-score-btn">Guardar Puntuación</button>
                     </div>
                     
                     <div class="challenge-actions">
@@ -1085,6 +1084,15 @@ class DerivaFun {
                 </div>
             </div>
         `;
+
+        // Re-renderizar KaTeX por si acaso
+        this.renderMath();
+
+        // Añadir event listener al botón de guardar puntuación
+        const saveButton = document.getElementById("save-score-btn");
+        if (saveButton) {
+            saveButton.addEventListener("click", () => this.savePlayerScore());
+        }
     }
 
     // Guardar puntuación del jugador
